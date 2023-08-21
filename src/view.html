@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-wrapper">
+            <h2 class="header-text">TODO List</h2>
+            <button class="add-butn">Add Task</button>
+        </div>
+
+        <!--  Add Task  -->
+        <div class="add-form">
+            <h4 class="header-text">Add New Task</h4>
+            <div class="form-input">
+                <input type="text" name="title" placeholder="Enter Title">
+                <!-- <input type="text" name="desc" placeholder="Description"> -->
+                <textarea name="desc" cols="30" rows="1" placeholder="Description"></textarea>
+                <input type="date" name="date" id="date" onclick="dateFun()" placeholder="Date">
+                <input type="time" name="time" id="time" placeholder="time" onclick="timeFunc()" value="00:00">
+                <div class="butn-box">
+                    <button class="add-butn">Add Task</button>
+                    <!-- <button class="cancel-butn">Cancel</button> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="box">
+                <div class="box-header">
+                    <h4>Title name</h4>
+                    <div class="icons-group">
+                        <!-- <span><i class="fa-regular fa-circle-check"></i></span> -->
+                        <!-- <span><i class="fa-sharp fa-regular fa-circle"></i></span> -->
+                        <span><i class="fa-solid fa-circle completed"></i></span>
+                        <span><i class="fa-solid fa-trash-can"></i></span>
+                        <span><i class="fa-solid fa-pen-to-square"></i></span>
+                    </div>
+                </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla nesciunt provident magni in? Incidunt
+                    deserunt animi tenetur enim, repudiandae ex et dolor reiciendis est quibusdam! Repellat dolorem
+                    distinctio dolorum iure! </p>
+                <p class="date">Today <span class="time">10:08 AM</span></p>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h4>Title name</h4>
+                    <div class="icons-group">
+                        <span><i class="fa-sharp fa-regular fa-circle"></i></span>
+                        <span><i class="fa-solid fa-trash-can"></i></span>
+                        <span><i class="fa-solid fa-pen-to-square"></i></span>
+                    </div>
+                </div>
+                <p>something </p>
+                <p class="date">Today <span class="time" style="color: red;">10:08 AM</span></p>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h4>Title name</h4>
+                    <div class="icons-group">
+                        <span><i class="fa-sharp fa-regular fa-circle"></i></span>
+                        <span><i class="fa-solid fa-trash-can"></i></span>
+                        <span><i class="fa-solid fa-pen-to-square"></i></span>
+                    </div>
+                </div>
+                <p>something </p>
+                <p class="date">Today <span class="time">10:08 AM</span></p>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h4>Title name</h4>
+                    <div class="icons-group">
+                        <span><i class="fa-sharp fa-regular fa-circle"></i></span>
+                        <span><i class="fa-solid fa-trash-can"></i></span>
+                        <span><i class="fa-solid fa-pen-to-square"></i></span>
+                    </div>
+                </div>
+                <p>something </p>
+                <p class="date">Today <span class="time">10:08 AM</span></p>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h4>Title name</h4>
+                    <div class="icons-group">
+                        <span><i class="fa-sharp fa-regular fa-circle"></i></span>
+                        <span><i class="fa-solid fa-trash-can"></i></span>
+                        <span><i class="fa-solid fa-pen-to-square"></i></span>
+                    </div>
+                </div>
+                <p>something </p>
+                <p class="date">Today <span class="time">10:08 AM</span></p>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h4>Title name</h4>
+                    <div class="icons-group">
+                        <span><i class="fa-sharp fa-regular fa-circle"></i></span>
+                        <span><i class="fa-solid fa-trash-can"></i></span>
+                        <span><i class="fa-solid fa-pen-to-square"></i></span>
+
+                    </div>
+                </div>
+                <p>something </p>
+                <p class="date">Today <span class="time">10:08 AM</span></p>
+            </div>
+        </div>
+
+        <!--  Edit Task  -->
+        <div class="add-form">
+            
+            <div class="box-header">
+                <h4 class="header-text">To Write CRUD for Tasks</h4>
+                <div class="icons-group">
+                    <span><i class="fa-sharp fa-regular fa-circle"></i></span>
+                    <span><i class="fa-solid fa-trash-can"></i></span>
+                    <span><i class="fa-solid fa-pen-to-square"></i></span>
+
+                </div>
+            </div>
+            <div class="form-input">
+                <input type="text" name="title" value="To Write CRUD for Tasks" placeholder="Enter Title">
+                <!-- <input type="text" name="desc" placeholder="Description"> -->
+                <textarea name="desc" cols="30" rows="1" placeholder="Description">Model ,Respository, Service and Controller layers</textarea>
+                <input type="date" name="date" id="date" onclick="dateFun()" placeholder="Date">
+                <input type="time" name="time" placeholder="time" value="10:00">
+                <div>
+                    <button class="add-butn">Edit Task</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
