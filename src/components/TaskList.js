@@ -2,9 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import EditTask from "./EditTask";
 
-const TaskList = () => {
+const TaskList = ({ isAllList, list }) => {
 
-    const [list, setList] = useState([]);
     const [idForEdit, setIdForEdit] = useState(0);
 
     const completeTask = (task) => {
@@ -33,16 +32,6 @@ const TaskList = () => {
         setIdForEdit(id)
     }
 
-    const checkDate = (date) => {
-
-    }
-
-    useEffect(() => {
-        axios.get('http://localhost:8080/tasks')
-            .then(response => setList(response.data))
-            .catch(err => console.log(err))
-    }, [list])
-
     return (
         <div className="content">
 
@@ -58,21 +47,24 @@ const TaskList = () => {
                                         ? <span><i className="fa-solid fa-circle-check completed"></i> </span>
                                         : <span onClick={() => completeTask(task)}><i className="fa-regular fa-circle-check completed"></i></span>
                                 }
-                                <span onClick={() => showEdit(task.id)}><i className="fa-solid fa-pen-to-square"></i></span>
+                                {
+                                    !task.complete && <span onClick={() => showEdit(task.id)}><i className="fa-solid fa-pen-to-square"></i></span>
+                                }
+
                                 <span><i className="fa-solid fa-trash-can" onClick={() => deleteTask(task.id)}></i></span>
                             </div>
                         </div>
                         <p>{task.description} </p>
-                        <span className="date">
+                        <span className="date" id='showdate'>
                             {
-                                //TODO check date
                                 task.date
                             }
                         </span>
-                        <span className="time">{task.time}</span>
+                        <span className="time" id='showtime'>{task.time}</span>
                     </div>
 
                 ))
+
             }
         </div >
     );

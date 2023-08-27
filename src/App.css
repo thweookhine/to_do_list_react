@@ -1,5 +1,5 @@
   * {
-    background-color: #333;
+    background-color: #262a2f;
     color: #fff;
   }
 
@@ -23,19 +23,21 @@
   }
 
   .header-text {
-    color: orangered;
+    color: orange;
   }
 
   .header-wrapper h2 {
     display: inline;
   }
 
-  .add-butn {
-    background-color: rgb(184, 95, 60);
+  .add-butn,
+  .alltasks-butn {
+    background-color: orange;
     color: #ffffff;
     padding: 7px 20px;
     border: none;
     border-radius: 10px;
+    margin-left: 10px;
   }
 
   .cancel-butn {
@@ -55,7 +57,7 @@
   .add-form {
     border: 2px solid lightsalmon;
     border-radius: 5px;
-    box-shadow: 2px 2px 5px orange;
+    box-shadow: 2px 2px 5px lightsalmon;
     margin-bottom: 15px;
     padding: 10px;
   }
@@ -90,10 +92,12 @@
   .date,
   .time {
     color: green;
+    margin-right: 10px;
   }
 
   .dued {
-    color: green;
+    color: red;
+    margin-right: 10px;
   }
 
   /*Add Form*/
