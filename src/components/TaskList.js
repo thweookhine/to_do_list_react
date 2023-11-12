@@ -28,9 +28,42 @@ const TaskList = ({ isAllList, list }) => {
             .catch(err => console.log(err))
     }
 
+    const checkDate = (task) => {
+        var date = new Date(task.date).toISOString().substring(0, 10);
+        var today = new Date().toISOString().substring(0, 10);
+        if (date < today) {
+            return false;
+        }
+        return true;
+    }
+
+    const checkTime = (task) => {
+        var date = new Date(task.date).toISOString().substring(0, 10);
+        var today = new Date().toISOString().substring(0, 10);
+
+        var hour = new Date().getHours();
+
+
+        var time = new Date()
+        var current = new Date().toTimeString().slice(0, 8);
+
+        if (date < today) {
+            return false;
+        } else if (date == today && (task.time < current)) {
+            return false;
+        } else {
+            return true;
+        }
+
+    }
+
     const showEdit = (id) => {
         setIdForEdit(id)
     }
+
+    useEffect(() => {
+
+    }, [list])
 
     return (
         <div className="content">
@@ -39,6 +72,7 @@ const TaskList = ({ isAllList, list }) => {
                 list && list.map((task, index) => (
 
                     idForEdit === task.id ? <EditTask key={index} id={task.id} setIdForEdit={setIdForEdit} /> : <div className="box" key={index}>
+
                         <div className="box-header">
                             <h4>{task.title}</h4>
                             <div className="icons-group">
@@ -55,12 +89,26 @@ const TaskList = ({ isAllList, list }) => {
                             </div>
                         </div>
                         <p>{task.description} </p>
-                        <span className="date" id='showdate'>
-                            {
-                                task.date
-                            }
-                        </span>
-                        <span className="time" id='showtime'>{task.time}</span>
+                        {
+                            checkDate(task) ? <span className="date" id='showdate'>
+                                {
+                                    task.date
+                                }
+                            </span> :
+                                <span className="date dued" id='showdate'>
+                                    {
+                                        task.date
+                                    }
+                                </span>
+                        }
+                        {
+                            checkTime(task) ?
+                                <span className="time" id='showtime'>{task.time}</span>
+                                :
+                                <span className="time dued" id='showtime'>{task.time}</span>
+                        }
+
+
                     </div>
 
                 ))
