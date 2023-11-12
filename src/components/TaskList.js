@@ -43,7 +43,6 @@ const TaskList = ({ isAllList, list }) => {
 
         var hour = new Date().getHours();
 
-
         var time = new Date()
         var current = new Date().toTimeString().slice(0, 8);
 
@@ -63,7 +62,7 @@ const TaskList = ({ isAllList, list }) => {
 
     useEffect(() => {
 
-    }, [list])
+    }, [])
 
     return (
         <div className="content">

@@ -46,6 +46,10 @@ const Home = () => {
                 {/* Create Task  */}
                 {isCreate && <CreateTask iscreated={setIsCreate} />}
 
+                <div>
+                    {isAll ? <h3 className="header-text">All Tasks</h3> : <h3 className="header-text">Task For Today</h3>}
+                </div>
+
                 <TaskList isAllList={isAll} list={list} />
             </div>
         </div>
